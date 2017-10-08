@@ -1,0 +1,427 @@
+#overlay{
+  background-color: rgba(0,0,0,0.8) !important;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 9;
+  top: 0; 
+}
+@page {
+  size: landscape;
+}
+@media print {
+    body{
+        background-color: #E6E7E9 !important;
+        -webkit-print-color-adjust: exact; 
+    }
+  #controls{
+    visibility: hidden;
+    display: none;
+    opacity: 0;
+  }
+  #oops{
+    visibility: hidden;
+    display: none;
+    opacity: 0;
+  }
+}
+#outra{
+  background-color: #1E404E !important;
+  height: 100px;
+  width: 300px;
+  margin: auto;
+  position: fixed;
+  top: 40%;
+  left: 40%;
+  z-index: 9;
+  cursor:move;
+}
+#outra p{
+  text-align: center;
+  background-color: #1E404E !important;
+  position: absolute;
+  width: 90%;
+  padding: 11px;
+  top: -12px;
+  color: white !important;
+  text-transform: uppercase;
+}
+#outra button#fazer{
+  background-color: #2f5a6b !important;
+  border: 0;
+  border-radius: 8px;
+  position: absolute;
+  bottom: 20px;
+  left: 40%;
+  width: 60px;
+  padding: 5px;
+  color: white;
+}
+button#x{
+  background-color: red;
+  border: 0;
+  float: right;
+  position: relative;
+  top: -20px;
+  color: white;
+  padding: 10px;
+}
+#outra button{
+  display: inline-grid;
+}
+body {
+  height: 200px;
+  width: 100%;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #0a212a;
+  margin: 0;
+}
+#baxa{
+  height: 40pc;
+  width: 100%;
+}
+
+#name, #fun{
+  margin-bottom: 11px
+}
+body::selection {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+input{
+  outline: none;
+  border: 0;
+  font-size: 15px;
+  color: #1e404e;
+  text-transform: uppercase;
+}
+input::-webkit-input-placeholder{
+  color: #1e404e;
+}
+input::-moz-placeholder{
+  color: #1E404E;
+}
+input#cpm::-webkit-input-placeholder{
+  color: #eee !important;
+}
+input#cpm::-moz-placeholder{
+  color: #eee !important;
+}
+input#va::-webkit-input-placeholder{
+  color: #fff;
+  font-size: 19px;
+  letter-spacing: -1px
+}
+#cp{
+  color: #ffffe0;
+  text-align: left;
+  font-size: 11px;
+}
+input#cpm{
+  color: white !important;
+}
+#name, #ven, #doc, #rg, #fun, #em, #ven{
+  background-color: #ffffe0;
+  height: 30px;
+  text-align: left;
+  font-size: 11px;
+  color: #1E404E;
+}
+input{
+  background-color: transparent
+}
+
+#doc{
+  width: 48%;
+  float: left;
+  padding-left: 5px
+}
+
+#cp{
+  width: 46%;
+  float: right;
+  padding-left: 5px
+}
+
+#em{
+  width: 47%;
+  float: right;
+  padding-left: 5px
+}
+
+#ven{
+  width: 48%;
+  float: left;
+  padding-left: 5px
+}
+#fun{
+  padding-left: 5px
+}
+
+input#func{
+  font-weight: bold;
+  text-align: center;
+  font-size: 25px;
+  position: relative;
+  bottom: 13px !important;
+  letter-spacing: 5px
+}
+
+input#nome{
+  font-size: 20px;
+  padding-top: 14px;
+  letter-spacing: 1px
+}
+
+p{
+  font-size: 12px
+}
+@media screen and (max-width:415px){
+  h2{
+    font-size: 20px !important;
+  }
+  p{
+    font-size: 12px !important;
+  }
+  body{
+    overflow: hidden;
+  }
+  #infs{
+    width: 318px !important;
+  }
+}
+@media screen and (max-width:321px){
+  #infs{
+    width: 312px !important;
+    margin: auto;
+    left: -8px !important;
+  }
+}
+
+#carteira{
+  background-color: #1e404e;
+  position: relative;
+  width: 537px;
+  margin: auto;
+  height: 310px;
+}
+
+#SCREEN{
+  background-color: #1e404e;
+  margin: auto;
+  width: 537px;
+  height: 330px;
+  border:2px dashed rgba(255,255,255,.5) !important;
+    top: 135px;
+  position: relative;
+}
+
+#controls{
+  width: 537px;
+  margin: auto;
+  color: white;
+  position: relative;
+  top: -180px
+}
+#controls button{
+  background-color: #1e404e;
+  border: 0;
+  padding: 20px;
+  color: #fff;
+  border-bottom:3px solid black;
+  float: right;
+}
+#controls button:hover{
+  background-color: #2e5f73
+}
+.x2{
+		transform: scale(1.8,1.8);
+  position: relative;
+  z-index: 9;
+	}
+
+#infs{
+  position: relative;
+  width: 318px;
+  margin: auto;
+  left: -13px;
+  top: -15px
+}
+#infs h2, p{
+  color: white;
+}
+#infs p{
+  font-weight: 100;
+  font-size: 14px;
+}
+#infs h2{
+  font-size: 22px;
+}
+#foto img{
+  width: 110px;
+  position: relative;
+  top: -20px;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none;
+  border: 2px solid white;
+  left: -10px;
+}
+
+#foto{
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none;
+  width: 110px;
+}
+#foto img::selection {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+input#nome{
+  width: 95%;
+}
+
+#name, #fun,{
+  margin-bottom: 10px
+}
+
+@media screen and (max-width:415px){
+  div#ven{
+    top: 17px !important;
+    position: relative;
+  }
+  #em{
+    position: relative;
+    top: 10px
+  }
+}
+input{
+  text-align: center;
+  width: 100%
+}
+
+input#cpm{
+  font-size: 16px
+}
+input#venc{
+  font-size: 16px
+}
+
+input#nasc{
+  font-size: 16px
+}
+
+input#rgd{
+  font-size: 15px;
+  line-height: 1.6 !important;
+}
+input#nome{
+  font-size: 17px!important;
+}
+
+br{
+  margin: 0.01px !important;
+}
+
+
+input#nome{
+  position: relative;
+  bottom: 8px
+}
+
+input#rgd{
+  position: relative;
+  bottom: 5px
+}
+
+input#cpm{
+  position: relative;
+  bottom: 3px
+}
+
+input#nasc{
+  position: relative;
+  bottom: 4px
+}
+
+input#venc{
+  position: relative;
+  bottom: 4px;
+}
+input#func{
+  bottom: 13px
+}
+#carteira h2{
+  color: #fff;
+}
+#logos{
+width: 10%;
+  position: absolute;
+  right: 45px;
+  top: 25px
+}
+#infs{
+  float: right;
+  position: relative;
+  margin-right: 25px
+}
+
+img#fotos{
+  position: absolute;
+  width: 18.6%;
+  top: 116px;
+  left: 50px
+}
+
+#title{
+  position: relative;
+  left: -60px;
+  top: 15px
+}
+
+#title h2{
+  position: relative;
+  top: 20px
+}
+.foto{
+  display: none;
+}
+
+.new{
+  float: left;
+}
+
+.logo{
+  display: none;
+}
+
+#upf{
+  width: 20%;
+}
+#upl{
+  width: 20%;
+  position: absolute;
+  left: 100px;
+  top: -0px
+}
+#dl{
+  width: 20%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#controls div{
+  display: inline-block;
+}
+#oops{
+  background-color: #1E404E;
+  text-align: center;
+  padding: 20px;
+  display: none;
+}

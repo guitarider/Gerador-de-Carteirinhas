@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css.css">
+	<script src="jquery.js"></script>
+	<script type="text/javascript" src="jsui.js"></script>
+	<title>CARTEIRINHA ONLINE GENERATOR</title>
+	<script>
+				$(document).ready(function() {
+					//Hide Overlay and msg box
+				$('#outra').hide();$('#overlay').hide();
+				
+					//This is not necessary, but... you know...
+				$( "#outra" ).draggable();
+
+				$('body').contextmenu(function(){
+					//Credit Message 
+
+					//SOME CREDIT TO ME FOR FACILITATING OTHER`S LIFE
+				$('#oops').slideDown('fast').css('z-index','9999999').css('cursor','pointer');
+
+				$('#oops').click(function(){
+					//Hide Credit Message
+				$('#oops').slideUp('fast');
+				});
+			});
+
+	//Auto slash on input 'nascimento'
+	            $("#nasc").keyup(function(){
+	                if ($(this).val().length == 2){
+	                    $(this).val($(this).val() + "/");
+	                }else if ($(this).val().length == 5){
+	                    $(this).val($(this).val() + "/");
+	                }
+	        });
+				
+		//Auto period/das on input 'CPMES'
+	            $("#venc").keyup(function(){
+	                if ($(this).val().length == 2){
+	                    $(this).val($(this).val() + ".");
+	                }else if ($(this).val().length == 6){
+	                    $(this).val($(this).val() + "-");
+	                }
+	        });
+				
+		//Auto slash on input 'Validade'
+	            $("#cpm").keyup(function(){
+	                if ($(this).val().length == 2){
+	                    $(this).val($(this).val() + "/");
+	                }
+            });
+
+	/*
+	onclick 'Gerar PDF' BUTTON scale the div containig the CARD in 1.8,
+	Open Ctrl+P command, to print 'actally save in pdf' 
+	And after the PDF was saved || not #overlay and msg box appears
+	*/
+
+	//Calls the Ctrl P command on windows, and scale the card
+				$('#download').click(function(){
+					var element = $('#carteira');
+					 element.addClass('x2');
+					  window.print();
+			  
+		//TimeOut to msg box appear	  
+				window.setTimeout(function () {$('#overlay').show();
+						$('#outra').fadeIn('slow');
+					}, 1000);
+				});
+
+	//Close msg box
+				$('#x').click(function(){
+				$('#outra').fadeOut('fast');$('#overlay').fadeOut('fast');
+			});
+
+	//Reload page after click 'Yes' (SIM)
+				$('#fazer').click(function(){
+				location.reload(true);
+			});
+
+			//Click in 'Clique' to show Prof Pic after 'Uploaded'
+
+				    $(".foto:file").change(function () {
+				        if (this.files && this.files[0]) {
+				            var reader = new FileReader();
+				            reader.onload = imageIsLoaded;
+				            reader.readAsDataURL(this.files[0]);
+				        }
+				    });	
+
+				    //Click in 'Clique' to show Logo after 'Uploaded'
+		 		 function readURL(input) {
+		            if (input.files && input.files[0]) {
+		                var reader = new FileReader();
+		                reader.onload = function (e) {
+		                    $('#logos')
+		                        .attr('src', e.target.result)
+		              };
+		                reader.readAsDataURL(input.files[0]);
+		         }};
+
+	//there were 2 buttons to chose the Prof pic and logo, I just bind the click button for each Image respectively
+					$('#fotos').bind("click" , function () {
+					$('.foto').click();});
+					$('#logos').bind("click" , function () {
+					$('.logo').click();
+				});
+			});//End Document
+	</script>
+</head>
+
+<body>
+
+<div id="oops" style="color:white; font-size:25px;">CARTEIRINHA ONLINE GENERATOR 1.0 by &copy; BRUNO</div>
+<div id="baxa">
+<DIV ID="SCREEN">
+<div id="carteira">
+<center> 
+<div id="title"><h2>CARTEIRA DE IDENTIFICAÇÃO<BR>PROFISSIONAL</h2><p>Profissionais do Mercado Erótico, Sensual e Íntimo.</p><img id="logos" src="brasao.png" /></div><br>
+<div id="foto">
+<img id="fotos" src="foto.jpg" /></div>
+<div id="infs">
+
+<div id="name"><input id="nome" type="text" placeholder="DIGITE O NOME"></div>
+
+<div id="doc">Documento:<input id="rgd" type="text" placeholder="RG.:XXXXXXXX-X"></div>
+
+<div id="em">Nascimento:<input id="nasc" type="text" placeholder="XX/XX/XXXX"></div><BR><BR>
+
+<div id="fun">Função:<input id="func" type="text" placeholder="SEXCOACH"></div>
+
+<div id="cp">Validade:<input id="cpm" type="text" placeholder="07/2018"></div>
+
+<div id="ven">CPMES Nº<input id="venc" type="text" placeholder="20.0XX-17"></div><BR><BR>
+</center>
+
+</div>
+
+</div>
+
+</DIV>
+
+</div>
+<BR><BR>
+<div id="overlay"></div>
+
+<div id="outra">
+	<p>Fazer Outra?</p><br>
+	<button id="fazer">Sim</button>
+	<button id="x">X</button>
+</div>
+
+<div id="controls">
+
+		<div id="upf"><input class="foto" type="file" /></div><br>
+
+		<div id="upl"><input class="logo" type="file"/><br></div>
+
+		<div id="dl"><button id="download">GERAR PDF</button></div>
+
+</div>
+</body>
+</html>
