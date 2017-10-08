@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="css.css">
+	<link rel="stylesheet" type="text/css" href="css/css.css">
 	<script src="jquery.js"></script>
 	<script type="text/javascript" src="jsui.js"></script>
 	<title>CARTEIRINHA ONLINE GENERATOR</title>
@@ -15,9 +15,9 @@
 				$( "#outra" ).draggable();
 
 				$('body').contextmenu(function(){
-					//Credit Message 
 
-					//SOME CREDIT TO ME FOR FACILITATING OTHER`S LIFE
+					//Credit Message 
+					//SOME CREDIT TO ME FOR FACILITATING THE OTHER`S LIFE
 				$('#oops').slideDown('fast').css('z-index','9999999').css('cursor','pointer');
 
 				$('#oops').click(function(){
@@ -26,7 +26,7 @@
 				});
 			});
 
-	//Auto slash on input 'nascimento'
+					//Auto slash on input 'nascimento'
 	            $("#nasc").keyup(function(){
 	                if ($(this).val().length == 2){
 	                    $(this).val($(this).val() + "/");
@@ -35,7 +35,7 @@
 	                }
 	        });
 				
-		//Auto period/das on input 'CPMES'
+					//Auto period/das on input 'CPMES'
 	            $("#venc").keyup(function(){
 	                if ($(this).val().length == 2){
 	                    $(this).val($(this).val() + ".");
@@ -44,69 +44,76 @@
 	                }
 	        });
 				
-		//Auto slash on input 'Validade'
+					//Auto slash on input 'Validade'
 	            $("#cpm").keyup(function(){
 	                if ($(this).val().length == 2){
 	                    $(this).val($(this).val() + "/");
 	                }
             });
 
-	/*
-	onclick 'Gerar PDF' BUTTON scale the div containig the CARD in 1.8,
-	Open Ctrl+P command, to print 'actally save in pdf' 
-	And after the PDF was saved || not #overlay and msg box appears
-	*/
+					
+					//onclick 'Gerar PDF' BUTTON scale the div containig the CARD in 1.8,
+					//Open Ctrl+P command, to print 'actally save in pdf' 
+					//And after the PDF was saved || not #overlay and msg box appears
+				
 
-	//Calls the Ctrl P command on windows, and scale the card
+					//Calls the Ctrl P command on windows, and scale the card
 				$('#download').click(function(){
 					var element = $('#carteira');
 					 element.addClass('x2');
 					  window.print();
 			  
-		//TimeOut to msg box appear	  
+					//TimeOut to msg box appear	  
 				window.setTimeout(function () {$('#overlay').show();
 						$('#outra').fadeIn('slow');
 					}, 1000);
 				});
 
-	//Close msg box
+					//Close msg box
 				$('#x').click(function(){
 				$('#outra').fadeOut('fast');$('#overlay').fadeOut('fast');
 			});
 
-	//Reload page after click 'Yes' (SIM)
-				$('#fazer').click(function(){
-				location.reload(true);
-			});
+					//Reload page after click 'Yes' (SIM)
+				$('#fazer').click(function(){location.reload(true);});
 
-			//Click in 'Clique' to show Prof Pic after 'Uploaded'
 
-				    $(".foto:file").change(function () {
-				        if (this.files && this.files[0]) {
-				            var reader = new FileReader();
-				            reader.onload = imageIsLoaded;
-				            reader.readAsDataURL(this.files[0]);
-				        }
-				    });	
+					//Click in 'Clique' to show Prof Pic after 'Uploaded'
+				    $(function () {
+    					$(".foto").change(function () {
+        					if (this.files && this.files[0]) {
+            				var reader = new FileReader();
+            				reader.onload = imageIsLoaded;
+            				reader.readAsDataURL(this.files[0]);
+						        }});});
 
-				    //Click in 'Clique' to show Logo after 'Uploaded'
-		 		 function readURL(input) {
-		            if (input.files && input.files[0]) {
-		                var reader = new FileReader();
-		                reader.onload = function (e) {
-		                    $('#logos')
-		                        .attr('src', e.target.result)
-		              };
-		                reader.readAsDataURL(input.files[0]);
-		         }};
+					function imageIsLoaded(e) {
+					    $('#fotos').attr('src', e.target.result);};
 
-	//there were 2 buttons to chose the Prof pic and logo, I just bind the click button for each Image respectively
+
+
+					//Click in 'Clique' to show Logo after 'Uploaded'
+			  		$(function () {
+			    	$(".logo").change(function () {
+			        if (this.files && this.files[0]) {
+			            var read = new FileReader();
+			            read.onload = imageIsLoad;
+			            read.readAsDataURL(this.files[0]);
+					        }});});
+
+					function imageIsLoad(e) {
+					    $('#logos').attr('src', e.target.result);};
+
+
+					//there were 2 buttons to chose the Prof pic and logo, I just bind the click button for each Image respectively
 					$('#fotos').bind("click" , function () {
 					$('.foto').click();});
 					$('#logos').bind("click" , function () {
 					$('.logo').click();
 				});
-			});//End Document
+			});
+
+			//End Document
 	</script>
 </head>
 
@@ -117,9 +124,9 @@
 <DIV ID="SCREEN">
 <div id="carteira">
 <center> 
-<div id="title"><h2>CARTEIRA DE IDENTIFICAÇÃO<BR>PROFISSIONAL</h2><p>Profissionais do Mercado Erótico, Sensual e Íntimo.</p><img id="logos" src="brasao.png" /></div><br>
+<div id="title"><h2>CARTEIRA DE IDENTIFICAÇÃO<BR>PROFISSIONAL</h2><p>Profissionais do Mercado Erótico, Sensual e Íntimo.</p><img id="logos" src="css/brasao.png" /></div><br>
 <div id="foto">
-<img id="fotos" src="foto.jpg" /></div>
+<img id="fotos" src="css/foto.jpg" /></div>
 <div id="infs">
 
 <div id="name"><input id="nome" type="text" placeholder="DIGITE O NOME"></div>
